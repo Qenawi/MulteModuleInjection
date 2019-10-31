@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+
+dependencies {
+    def applicationDependencies = rootProject.ext.mainApplication
+    def developmentDependencies = rootProject.ext.development
+    implementation applicationDependencies.kotlin //stdlib
+    implementation applicationDependencies.kotlinCoroutines // core corotines
+    implementation applicationDependencies.dagger //dagger
+    implementation applicationDependencies.okhttpLoggingInterceptor
+    implementation applicationDependencies.retrofit
+}
+
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    def applicationDependencies = rootProject.ext.mainApplication
+    def developmentDependencies = rootProject.ext.development
+    api project(":base")
+    implementation applicationDependencies.room
+    kapt applicationDependencies.daggerCompiler
+
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
